@@ -1,0 +1,9 @@
+﻿@model IEnumerable<OneYearReign.Core.Models.SocialNetwork>
+
+<h2>follow us</h2>
+<ul class="block-follow-site">
+    @foreach (var item in Model) {
+        <li><a target="_blank" href="@item.Url" class="follow-link follow-link-@item.Name.ToLower() follow-link-site" title="Follow us on @item.Name"></a></li>
+    }
+</ul>
+<br />

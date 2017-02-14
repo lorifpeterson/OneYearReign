@@ -1,0 +1,36 @@
+﻿@model OneYearReign.Web.ViewModels.NewsItemsViewModel
+
+    <div class="post">
+        <div class="header">
+            <h2>@Model.Title</h2>
+        </div>
+    </div>
+
+
+<div>
+    @foreach (var item in Model.News)
+    {
+        <div class="post">
+	        <div class="entry">
+		        <div class="entry-btm">
+			        <p class="date">@item.CreatedDate.ToShortDateString()</p>
+
+                    @Html.Message(@item.Message)
+
+                    @if (@item.Image != null)
+                    {
+                        <a target="_blank" href="@item.Image.Link" title="@item.Image.Text"><img src="@item.Image.Source" alt="@item.Image.Text"  /></a>
+                    }
+
+                    @if (@item.Video != null)
+                    {
+                        @Html.Video(@item.Video);
+                    }
+                </div>
+	        </div>
+        @*				<div class="meta">
+		        <p class="links"><a href="#" class="comments">Comments (64)</a> &nbsp;&nbsp;&nbsp; <a href="#" class="permalink">Full article</a></p>
+	        </div>*@
+        </div>
+    }
+</div>

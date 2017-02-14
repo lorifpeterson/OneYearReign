@@ -1,0 +1,37 @@
+﻿@using OneYearReign.Core.Models;
+@model OneYearReign.Web.ViewModels.HomePageViewModel
+@{
+    ViewBag.Title = "One Year Reign";
+}
+
+<div id="content">
+    <div>
+        <a href="#"><img src="@Url.Content("~/Content/images/band/band01.jpg")" alt="band01.jpg" id="banner" /></a>
+        <p>@Model.Description</p>
+    </div>
+    <div class="news">
+	    <div class="partialContents" data-url="home/news"></div>
+    </div>
+</div>
+<div id="sidebar">
+	<ul>
+        <li>
+            @{ Html.RenderPartial("~/Views/Home/SocialNetworks.cshtml", Model.SocialNetworks); }
+        </li>
+        <li>
+            @{ Html.RenderPartial("~/Views/Home/LatestAlbum.cshtml", Model.LatestSingle); }
+        </li>
+                
+		@*<li>
+			<h2>sed etiam dolore</h2>
+			<ul>
+				<li><a href="#">Sed accumsan congue</a></li>
+				<li><a href="#"> Nulla dignissim nec augue</a></li>
+				<li><a href="#">Nunc ante elit nulla</a></li>
+				<li><a href="#">Sed suscipit consequat</a></li>
+				</a></li>
+			</ul>
+		</li>*@
+    </ul>
+</div>
+<!-- end #sidebar -->

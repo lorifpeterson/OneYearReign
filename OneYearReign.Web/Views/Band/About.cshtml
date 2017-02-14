@@ -1,0 +1,49 @@
+﻿@using OneYearReign.Core.Models;
+@model OneYearReign.Web.ViewModels.AboutViewModel
+@{
+    ViewBag.Title = "About";
+}
+
+
+<p>
+    <h2>Biography</h2>
+</p>
+    <p>Deep in the winter of 2010, Aaron Liebert (guitar) and Ryan Grace (percussion) got together & started making music. At first they merely performed cover songs for fun but soon started making their own material.
+    It wasn't too long before they added Mike Foglia (bass) to their line-up. This period of time was marked with sporadic practices & half-composed original works. 
+    <p>The first quarter of 2011 marked major changes for the small-time band - they added Rob Peterson as a second guitar player to their roster and finally came up for a name for themselves; One Year Reign. Over time Zach Gardner became the newest edition to the band and acquired Rob Peterson's role as guitar so Rob could become the vocalist for the band.</p>
+    <p>In November of 2011, after writing a handful of songs and performing on the local circuit, One Year Reign began recording their debut album "End of an Arrow”. They continued to perform while Aaron and Mike went to college, employing the musical skills of Justin Peterson (Guitar) and Matt Walusek (Bass) to keep the momentum going at live shows.</p> 
+    <p>On December 28th, 2012, after more than a year of the first recording sessions, "End of an Arrow" was released. One Year Reign continues to perform as often as their charisma and growing reputation permit, and never leave their audience dissatisfied.</p>
+    <p>
+        <h2>Official members:</h2>
+    </p>
+        <ul>
+            @foreach (Member item in Model.Members)
+            {
+            <div class="member">
+                <li>
+                    <img src="@Url.Content("~/Content/images/band/" + @item.Image.Source)" alt="@item.Image.Text" />
+                    <div>@item.Name</div>
+                    <div>@String.Join(", ", @item.Instruments)</div>
+                </li>
+            </div>
+            }
+        </ul>
+
+    <div>
+        <h2>Touring musicians:</h2>
+        <ul>
+        
+            @foreach (Member item in Model.TouringMembers)
+            {
+            <div class="member">
+                <li>
+                    <img src="@Url.Content("~/Content/images/band/" + @item.Image.Source)" alt="@item.Image.Text" />
+                    <div>@item.Name</div>
+                    <div>@String.Join(", ", @item.Instruments)</div>
+                </li>
+            </div>
+            }
+
+        </ul>
+    </div>
+

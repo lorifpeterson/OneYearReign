@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>@ViewBag.Title</title>
+        @System.Web.Optimization.Styles.Render("~/Content/css")
+        @System.Web.Optimization.Scripts.Render("~/bundles/jquery")
+    </head>
+
+    <body>
+        <div id="wrapper">
+	        <div id="header-wrapper">
+	            <div id="header">
+		            <div id="logo"><img src="@Url.Content("~/Content/images/band/logo.gif")" alt="One Year Reign" /></div>
+		            <div id="menu">
+			            <ul>
+                                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                                <li>@Html.ActionLink("About", "About", "Band")</li>
+                                <li>@Html.ActionLink("Events", "Events", "Band")</li>
+			            </ul>
+		            </div>
+	            </div>
+	        </div>
+	        <div id="page">
+                 @RenderBody()
+		        <div style="clear: both;">&nbsp;</div>
+	        </div>
+        </div>
+        <div id="footer">
+	        <p>(c) 2012 OneYearReign.com. Design by <a href="http://www.nodethirtythree.com/">nodethirtythree</a> + <a href="http://www.freecsstemplates.org/">FCT</a></p>
+        </div>
+
+        @RenderSection("scripts", required: false)
+    </body>
+</html>
